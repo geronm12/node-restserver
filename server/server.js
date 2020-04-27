@@ -1,6 +1,8 @@
 require('./config/config');
 
+
 const express = require('express');
+const mongoose = require('mongoose');
 
 const app = express();
 
@@ -10,48 +12,21 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(bodyParser.json());
 
-//Requests
+app.use(require('./routes/usuario'));
 
-app.get('/usuario', (req, res) => {
-res.json('Get Usuario');
-});
+ mongoose.connect(process.env.URLDB, 
+ { 
+   useNewUrlParser: true,
+   useCreateIndex: true,
+   useFindAndModify: true,
+   useUnifiedTopology: true
 
-app.post('/usuario', (req, res) => {
+ }, (err,res) => {
 
-let body = req.body;
+if(err) throw err;
 
-if(body.nombre === undefined) {
+console.log('Base de datos ONLINE');
 
-    res.status(400).json({
-    ok: false,
-    mensaje: 'El nombre es necesario'   
-    });
-
-}else
-{
-    res.json({
-        persona : body,
-        http : "Post Usuario",
-        ok: true
-        });
-}
-
-
-
-});
-
-app.put('/usuario/:id', (req, res) => {
-
-let id = req.params.id;
-res.json({
-id,
-http: "Put Usuario"
-});
-
-});
-
-app.delete('/usuario', (req, res) => {
-res.json('Delete Usuario');
 });
 
 app.listen(process.env.PORT, () => {
