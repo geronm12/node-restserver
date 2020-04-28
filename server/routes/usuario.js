@@ -7,7 +7,7 @@ const _ = require('underscore');
 
 const Usuario = require('../models/usuario');
 
-const { verificaToken } = require('../middlewares/authenticacion');
+const { verificaToken, verificaAdmin_Role } = require('../middlewares/authenticacion');
 
 const app = express();
 
