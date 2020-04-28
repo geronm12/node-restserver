@@ -47,7 +47,7 @@ if(!bcrypt.compareSync(body.password, usuarioDB.password)){
 
 let token = jwt.sign(
 { usuario: usuarioDB }, 
-proces.env.SEED, 
+process.env.SEED, 
 {expiresIn: process.env.CADUCIDAD_TOKEN});
 
 
