@@ -1,24 +1,29 @@
 {
   "name": "rest-service",
   "version": "1.0.0",
-  "endgines": {
-    "node": "10.16.3"
-  },
-  "description": "",
+  "description": "Practicando la construcción de rest Apis en node js",
   "main": "index.js",
   "scripts": {
-    "start": "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geronm12/node-restserver.git"
   },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/geronm12/node-restserver/issues"
+  },
+  "homepage": "https://github.com/geronm12/node-restserver#readme",
   "dependencies": {
-    "bcrypt": "^3.0.8",
-    "body-parser": "^1.19.0",
+    "bcrypt": "^4.0.1",
     "express": "^4.17.1",
+    "google-auth-library": "^6.0.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.10",
     "mongoose-unique-validator": "^2.0.3",
+    "npm-install-all": "^1.1.21",
     "underscore": "^1.10.2"
   }
 }
