@@ -4,6 +4,7 @@
   "description": "Practicando la construcción de rest Apis en node js",
   "main": "server/server",
   "scripts": {
+    "start": "server/server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
